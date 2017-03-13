@@ -1,0 +1,19 @@
+{
+  "name": "iou",
+  "version": "1.0.0",
+  "description": "## About `IOU` is an implementation of the `Promise` methodology, which itself is used within JavaScript for handling asynchronous operations. `IOU` is an experimental/test project, and should *not* be used in production.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmykolyn/iou.git"
+  },
+  "author": "Jesse R Mykolyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrmykolyn/iou/issues"
+  },
+  "homepage": "https://github.com/jrmykolyn/iou#readme"
+}
