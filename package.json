@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jrmykolyn/iou/issues"
   },
-  "homepage": "https://github.com/jrmykolyn/iou#readme"
+  "homepage": "https://github.com/jrmykolyn/iou#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.3"
+  }
 }
