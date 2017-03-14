@@ -49,4 +49,27 @@ describe( '`IOU` tests:', function() {
             }
         );
     } );
+
+
+    it( 'Should correctly invoke the `rejectHandler` callback.', function( done ) {
+        // Instantiate new `IOU`; define async operation.
+        var iou = new IOU( function( resolve, reject ) {
+            setTimeout( function() {
+                reject( new Error( 'Whoops! Something went wrong' ) );
+            }, 1000 );
+        } );
+
+        // Init. async operation.
+        iou.then(
+            // `resolveHandler`
+            function( data ) {
+                // ...
+            },
+            // `rejectHandler`
+            function( err ) {
+                expect( err instanceof Error ).toBe( true );
+                done();
+            }
+        );
+    } );
 } );
