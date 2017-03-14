@@ -8,6 +8,8 @@ module.exports = ( function() {
         }
 
         this.callback = callback;
+        this.state = 'idle';
+        this.fate = 'pending';
 
         return this;
     } // /IOU()
@@ -18,6 +20,14 @@ module.exports = ( function() {
     // --------------------------------------------------
     IOU.prototype.then = function( resolveHandler, rejectHandler ) {
         this.callback( resolveHandler, rejectHandler );
+    }
+
+    IOU.prototype.getState = function() {
+        return this.state;
+    }
+
+    IOU.prototype.getFate = function() {
+        return this.fate;
     }
 
 
