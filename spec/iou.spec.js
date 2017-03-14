@@ -8,7 +8,7 @@ var IOU = require( '../src/iou' );
 // DEFINE TESTS
 // --------------------------------------------------
 describe( '`IOU` tests:', function() {
-    it ( 'Should throw and error when instantiated without a `callback` argument.', function() {
+    it( 'Should throw and error when instantiated without a `callback` argument.', function() {
         var iou;
 
         try {
@@ -21,9 +21,32 @@ describe( '`IOU` tests:', function() {
     } );
 
 
-    it ( 'Should return an `IOU` instance', function( ) {
+    it( 'Should return an `IOU` instance.', function( ) {
         var iou = new IOU( function() { return true; } );
 
         expect( iou instanceof IOU ).toBe( true );
+    } );
+
+
+    it( 'Should correctly invoke the `resolveHandler` callback.', function( done ) {
+        // Instantiate new `IOU`; define async operation.
+        var iou = new IOU( function( resolve, reject ) {
+            setTimeout( function() {
+                resolve( true );
+            }, 1000 );
+        } );
+
+        // Init. async operation.
+        iou.then(
+            // `resolveHandler`
+            function( data ) {
+                expect( data ).toBe( true );
+                done();
+            },
+            // `rejectHandler`
+            function( err ) {
+                // ...
+            }
+        );
     } );
 } );
