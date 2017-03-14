@@ -7,5 +7,8 @@
 - Implementation must include a constructor method (eg. `IOU`).
 - Constructor must accept the following argument(s):
     - a callback which includes the asynchronous operation.
-- Instance returned by constructor must include method to trigger/initiate async operation.
-- Instance must keep track of: own state (eg. 'pending', 'resolved', etc.); own fate (eg. 'succeeded', 'failed', etc.).
+- Instance returned by constructor must include method to trigger/initiate async operation (eg. `.then()`).
+- Instance must support 'chaining' of `.then()` methods (eg. `new IOU().then( ... ).then( ... );`).
+- Instance must keep track of:
+    - own state (eg. 'pending', 'resolved', etc.).
+    - own fate (eg. 'succeeded', 'failed', etc.).
