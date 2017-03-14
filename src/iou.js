@@ -16,8 +16,8 @@ module.exports = ( function() {
     // --------------------------------------------------
     // INSTANCE METHODS
     // --------------------------------------------------
-    IOU.prototype.then = function( onSuccess, onError ) {
-        this.callback( onSuccess, onError );
+    IOU.prototype.then = function( resolveHandler, rejectHandler ) {
+        this.callback( resolveHandler, rejectHandler );
     }
 
 
