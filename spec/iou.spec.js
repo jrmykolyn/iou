@@ -28,6 +28,20 @@ describe( '`IOU` tests:', function() {
     } );
 
 
+    it( 'Should have a `state` of `idle` on instantiation.', function() {
+        var iou = new IOU( function() {} );
+
+        expect( iou.getState() ).toBe( 'idle' );
+    } );
+
+
+    it( 'Should have a `fate` of `pending` on instantiation.', function() {
+        var iou = new IOU( function() {} );
+
+        expect( iou.getFate() ).toBe( 'pending' );
+    } );
+
+
     it( 'Should correctly invoke the `resolveHandler` callback.', function( done ) {
         // Instantiate new `IOU`; define async operation.
         var iou = new IOU( function( resolve, reject ) {
